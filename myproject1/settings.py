@@ -1,6 +1,6 @@
 # Django settings for myproject1 project.
 import os
-
+#just making a change to test git.
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
