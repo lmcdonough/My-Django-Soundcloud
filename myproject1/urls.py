@@ -5,6 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^soundcloud/', include(myproject1.soundcloudfeed.urls)),                   
     # Examples:
     # url(r'^$', 'myproject1.views.home', name='home'),
     # url(r'^myproject1/', include('myproject1.foo.urls')),
