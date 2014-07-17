@@ -22,5 +22,16 @@ def custom_404(request):
     context = {'error_message': 'this is not the page you are looking for...'}
     return render(request, '404.html', context)
 
+def games(request):
+    context = {'games': 'this is the games page.'}
+
+    return render(request, 'games.html', context)
+
+
+def selected_game(request):
+    context = {'selected_game': 'this is the selected game.'}
+
+    return render(request, 'selected_game.html', context)
+
 
     
