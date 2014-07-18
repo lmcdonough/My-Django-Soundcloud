@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load less %}
 
 <head>
     <meta charset="utf-8">
@@ -18,7 +19,7 @@
 
     <!-- Add custom CSS here -->
     <link href="{% static 'css/landing-page.css' %}" rel="stylesheet">
-
+	<link rel="stylesheet" href="{{ STATIC_URL}}{% less 'css/mystyles.less' %}" />
 </head>
 
 <body>
@@ -47,7 +48,7 @@
                     </li>
                     <li><a href="{% url 'games' %}">Games</a>
                     </li>
-                    <li><a href="#About">About</a>
+                    <li><a id='testing_less' href="#About">About</a>
                     </li>
                     <li><a href="#Contact">Contact</a>
                     </li>
