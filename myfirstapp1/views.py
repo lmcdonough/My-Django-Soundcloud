@@ -22,16 +22,28 @@ def custom_404(request):
     context = {'error_message': 'this is not the page you are looking for...'}
     return render(request, '404.html', context)
 
-def games(request):
+def broadcasts(request):
     context = {'games': 'this is the games page.'}
 
-    return render(request, 'games.html', context)
+    return render(request, 'broadcasts.html', context)
 
 
-def selected_game(request):
+def selected_broadcast(request):
     context = {'selected_game': 'this is the selected game.'}
 
-    return render(request, 'selected_game.html', context)
+    return render(request, 'selected_broadcast.html', context)
 
-
+def sports(request):
+    context = {'sports': 'this is the sports page.'}
     
+    return render(request, 'sports.html', context)
+    
+def about(request):
+    context = {'about': 'this is the about page.'}
+    
+    return render(request, 'about.html', context)
+
+def contact(request):
+    context = {'contact': 'this is the contact page.'}
+    
+    return render(request, 'contact.html', context)
