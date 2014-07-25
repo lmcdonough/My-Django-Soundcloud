@@ -1,3 +1,72 @@
-#test_color {
-	color:blue !important;
+@text_center: center;
+@margin_none: 0px;
+@underline: underline;
+@border_1: 1px solid #F0F0F0 ;
+@em_1: 5em;
+@padding_l: 2em;
+@margin_1: 2em;
+@padding_2: 5em;
+@light_grey: #F0F0F0;
+@padding_3: 1em;
+@padding_4: 0.5em;
+@padding_5: 3em;
+
+.selected-game-heading{
+	text-align: @text_center ;
+}
+
+.margin-bottom-none{
+	margin-bottom:@margin_none;
+}
+
+.underline{
+	text-decoration:@underline;
+}
+
+.selected_team_container{
+	border: @border_1;
+	margin-top: @em_1;
+
+}
+
+.selected_team_main_row{
+	padding-top:@padding_3;
+	padding-bottom:@padding_3;
+}
+
+.heading_1{
+	margin-top:@margin_none;
+}
+
+.selected_team_tabs_container{
+	margin-top: @margin_1;	
+}
+
+.selected_team_tabs_content{
+	padding-top: @padding_l;
+}
+
+.player_card{
+	padding-right:@padding_4;
+	padding-bottom:@padding_4;
+	padding-left:@padding_4;
+}
+
+.player_card_image{
+	margin-bottom:@margin_none;
+	padding-top:@padding_5;
+	padding-right:@padding_5;
+	padding-bottom:@padding_5;
+	padding-left:@padding_5;	
+}
+
+.player_card_name{
+	text-align:@text_center;
+	margin-top:@margin_none !important;
+	margin-bottom:@margin_none !important;
+}
+
+.selected_team_broadcast_heading{
+	margin-top:@margin_none;
+	margin-bottom:@margin_none;
 }

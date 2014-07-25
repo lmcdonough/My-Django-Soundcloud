@@ -47,3 +47,13 @@ def contact(request):
     context = {'contact': 'this is the contact page.'}
     
     return render(request, 'contact.html', context)
+
+def teams(request):
+    context = {'teams': 'this is the teams page.'}
+    
+    return render(request, 'teams.html', context)
+
+def selected_team(request):
+    context = {'selected_team': 'this is the selected team page.'}
+    
+    return render(request, 'selected_team.html', context)

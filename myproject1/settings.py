@@ -11,8 +11,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 BASE_DIR = os.getcwd()
-LESS_EXECUTABLE = '/home/ec2-user/levi-test-proj-1/test-project-1/lib/less.js/bin/lessc'
-#STATIC_PRECOMPILER_OUTPUT_DIR = os.path.abspath(os.path.join(BASE_DIR, os.pardir, 'myfirstapp1/static'))
+#LESS_EXECUTABLE = '/home/ec2-user/levi-test-proj-1/test-project-1/lib/less.js/bin/lessc'
+COMPRESS_ENABLED = True
 
 DATABASES = {
     'default': {
@@ -86,7 +86,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     # other finders..
-    'static_precompiler.finders.StaticPrecompilerFinder',
+    #'static_precompiler.finders.StaticPrecompilerFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -120,9 +121,22 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
-STATIC_PRECOMPILER_COMPILERS = (
+'''STATIC_PRECOMPILER_COMPILERS = (
 
     'static_precompiler.compilers.LESS',
+)
+'''
+
+CSS_IN_FILE = os.path.abspath(os.path.join(BASE_DIR, os.pardir, 'myfirstapp1/static/css/mystyles.less')) 
+CSS_OUT_FILE = os.path.abspath(os.path.join(BASE_DIR, os.pardir, 'myfirstapp1/static/css/mystyles.css'))
+
+'''COMPRESS_PRECOMPILERS = (  
+    ('text/less', 'lessc  /home/ec2-user/levi-test-proj-1/test-project-1/myproject1dev/levi-test-project-1/myfirstapp1/static/css/mystyles.less /home/ec2-user/levi-test-proj-1/test-project-1/myproject1dev/levi-test-project-1/myfirstapp1/static/css/mystyles.css'),
+)
+'''
+
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lessc {infile} {outfile}'),
 )
 
 INSTALLED_APPS = (
@@ -134,7 +148,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'myfirstapp1',
-    'static_precompiler',
+    #'static_precompiler',
+    "compressor",
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

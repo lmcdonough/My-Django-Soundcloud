@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
-{% load less %}
+{% load compress %}
+
 
 <head>
     <meta charset="utf-8">
@@ -19,7 +20,9 @@
 
     <!-- Add custom CSS here -->
     <link href="{% static 'css/landing-page.css' %}" rel="stylesheet">
-	<link rel="stylesheet" href="{{ STATIC_URL}}{% less 'css/mystyles.less' %}" />
+	{% compress css %}
+	<link href="{% static 'css/mystyles.css' %}" charset='utf-8' rel="stylesheet">
+	{% endcompress %}
 </head>
 
 <body>
